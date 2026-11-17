@@ -1,7 +1,7 @@
 # My Expense Tracker
 
 from expense import create_expense
-from expense_manager import add_expense, view_expenses
+from expense_manager import add_expense, view_expenses, filter_by_category
 from file_handler import save_expenses, load_expenses
 
 expenses = load_expenses()
@@ -16,7 +16,8 @@ while True:
     print("1. Add Expense")
     print("2. View Expenses")
     print("3. Save Expenses") 
-    print("4. Exit")
+    print("4. Filter by Category")
+    print("5. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -40,6 +41,9 @@ while True:
         save_expenses(expenses)
     
     elif choice == "4":
+        filter_by_category(expenses)
+
+    elif choice == "5":
         print("Goodbye!")
         break
 

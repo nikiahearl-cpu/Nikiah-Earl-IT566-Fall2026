@@ -13,3 +13,16 @@ def view_expenses(expenses):
          print("\nYour Expenses:")
          for expense in expenses:
             print(expense)
+
+# Filter expenses by category
+
+def filter_by_category(expenses):
+
+    category = input("Enter category to search: ")
+
+    print("\nMatching Expenses:")
+
+    for expense in expenses:
+
+        if expense["category"].lower() == category.lower():
+            print(expense)
