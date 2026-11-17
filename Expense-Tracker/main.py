@@ -1,5 +1,7 @@
 # My Expense Tracker
 
+from expense import create_expense
+
 expenses = []
 
 # This program will help me keep track of expenses 
@@ -24,15 +26,10 @@ while True:
         amount = input("Enter the amount: ")
         description = input("Enter a description: ")
 
-        expense = {
-            "date": date,
-            "category": category,
-            "amount": amount, 
-            "description": description
-        }
+        expense = create_expense(date, category, amount, description)
 
         expenses.append(expense) 
-
+        
         print("Expense added!")
 
     elif choice == "2":
