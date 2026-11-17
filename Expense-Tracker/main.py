@@ -6,36 +6,50 @@ expenses = []
 
 print("My Expense Tracker")
 
-print("1. Add Expense")
-print("2. View Expenses") 
-print("3. Exit")
+while True:
 
-choice = input("Enter your choice: ")
+    print("\nMy Expense Tracker")
+    print("1. Add Expense")
+    print("2. View Expenses") 
+    print("3. Exit")
 
-print("You picked:", choice)
+    choice = input("Enter your choice: ")
 
-if choice =="1":
-	date = input("Enter the date: ")
-	category = input("Enter the category: ")
-	amount = input("Enter the amount: ")
-	description = input("Enter a description: ")
+    print("You picked:", choice)
 
-	expense = {
-		"date": date,
-		"category": category,
-		"amount": amount, 
-		"description": description
-	}
+    if choice == "1":
 
-	expenses.append(expense) 
+        date = input("Enter the date (YYYY-MM-DD): ")
+        category = input("Enter the category: ")
+        amount = input("Enter the amount: ")
+        description = input("Enter a description: ")
 
-	print("Expense added!")
+        expense = {
+            "date": date,
+            "category": category,
+            "amount": amount, 
+            "description": description
+        }
 
-elif choice == "2":
-	print(expenses)
+        expenses.append(expense) 
 
-elif choice == "3":
-	print("Goodbye!")
+        print("Expense added!")
 
-else:
-	print("Invalid choice")
+    elif choice == "2":
+
+        if len(expenses) == 0:
+            print("No expenses have been added yet.")
+
+        else:
+            print("\nYour Expenses:")
+
+            for expense in expenses:
+                print(expense)
+
+    elif choice == "3":
+
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
