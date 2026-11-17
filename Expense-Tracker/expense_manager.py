@@ -26,3 +26,17 @@ def filter_by_category(expenses):
 
         if expense["category"].lower() == category.lower():
             print(expense)
+
+# Filter expenses by date range
+
+def filter_by_date(expenses):
+
+    start_date = input("Enter start date (YYYY-MM-DD): ")
+    end_date = input("Enter end date (YYYY-MM-DD): ")
+
+    print("\nExpenses Within Date Range:")
+
+    for expense in expenses:
+
+        if start_date <= expense["date"] <= end_date:
+            print(expense)
