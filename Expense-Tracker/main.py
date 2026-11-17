@@ -1,6 +1,7 @@
 # My Expense Tracker
 
 from expense import create_expense
+from expense_manager import add_expense, view_expenses
 
 expenses = []
 
@@ -28,20 +29,10 @@ while True:
 
         expense = create_expense(date, category, amount, description)
 
-        expenses.append(expense) 
-        
-        print("Expense added!")
+        add_expense(expenses, expense)
 
     elif choice == "2":
-
-        if len(expenses) == 0:
-            print("No expenses have been added yet.")
-
-        else:
-            print("\nYour Expenses:")
-
-            for expense in expenses:
-                print(expense)
+        view_expenses(expenses)
 
     elif choice == "3":
 
