@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 main_backup.txt
+
+Expense-Tracker/expenses.csv
+Expense-Tracker/expenses.json
