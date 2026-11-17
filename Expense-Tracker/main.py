@@ -2,7 +2,7 @@
 
 from expense import create_expense
 from expense_manager import add_expense, view_expenses, filter_by_category, filter_by_date
-from file_handler import save_expenses, load_expenses
+from file_handler import save_expenses, load_expenses, export_to_csv
 
 expenses = load_expenses()
 
@@ -18,7 +18,8 @@ while True:
     print("3. Save Expenses") 
     print("4. Filter by Category")
     print("5. Filter by Date")
-    print("6. Exit")
+    print("6. Export to CSV")
+    print("7. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -48,6 +49,9 @@ while True:
         filter_by_date(expenses)
 
     elif choice == "6":
+        export_to_csv(expenses)
+
+    elif choice == "7":
         print("Goodbye!")
         break
 

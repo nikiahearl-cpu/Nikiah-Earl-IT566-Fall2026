@@ -1,7 +1,7 @@
 # This file is used to save expenses
 
 import json
-
+import csv
 
 def save_expenses(expenses):
 
@@ -23,3 +23,24 @@ def load_expenses():
     except FileNotFoundError:
         print("No saved expenses found.")
         return []    
+
+
+# Export expenses to a CSV file
+
+def export_to_csv(expenses):
+
+    with open("expenses.csv", "w", newline="") as file:
+
+        writer = csv.writer(file)
+
+        writer.writerow(["Date", "Category", "Amount", "Description"])
+
+        for expense in expenses:
+            writer.writerow([
+                expense["date"],
+                expense["category"],
+                expense["amount"],
+                expense["description"]
+            ])
+
+    print("Expenses exported to CSV successfully!")
