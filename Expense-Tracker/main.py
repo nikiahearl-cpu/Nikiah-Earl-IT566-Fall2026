@@ -2,9 +2,9 @@
 
 from expense import create_expense
 from expense_manager import add_expense, view_expenses
-from file_handler import save_expenses
+from file_handler import save_expenses, load_expenses
 
-expenses = []
+expenses = load_expenses()
 
 # This program will help me keep track of expenses 
 
